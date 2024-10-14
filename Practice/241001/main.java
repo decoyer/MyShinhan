@@ -23,8 +23,8 @@ private static int solution(int tickets, int[][] requests) {
 		for (int i = 0; i < requests.length; i++) {
 			// 낮은 등급부터 티켓 개수 확인 후 판매 가능 시 카운트
 			if (grade == requests[i][0] && tickets >= requests[i][1]) {
-				tickets -= requests[i][1]; // 보유 티켓 변수
-				sold += requests[i][1]; // 판매 티켓 변수
+				tickets -= requests[i][1];	// 보유 티켓 변수
+				sold += requests[i][1];		// 판매 티켓 변수
 			}
 		}
         grade++;
