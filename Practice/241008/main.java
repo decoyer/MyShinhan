@@ -7,7 +7,7 @@ class Person implements Comparable<Person> {
         this.bal = bal;
         this.idx = idx;
     }
-d
+
     @Override
     public int compareTo(Person p) {
         return bal != p.bal ? p.bal - bal : idx - p.idx;
