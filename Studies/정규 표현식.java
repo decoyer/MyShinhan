@@ -14,14 +14,17 @@ private static void m1() {
     String email = "test1234@naver.com";
     String regExp2 = "(\\w+)@(\\w+\\.\\w+)";
 
+    // 패턴 확인
     boolean result1 = Pattern.matches(regExp1, num);
     System.out.println(result1);
     boolean result2 = Pattern.matches(regExp2, email);
     System.out.println(result2);
 
+    // 그룹 확인 시 컴파일 필수
     Pattern p1 = Pattern.compile(regExp1);
     Pattern p2 = Pattern.compile(regExp2);
 
+    // 그룹 확인
     Matcher m1 = p1.matcher(num);
     Matcher m2 = p2.matcher(email);
 
