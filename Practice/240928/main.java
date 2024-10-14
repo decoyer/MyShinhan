@@ -4,11 +4,11 @@ public static void main(String[] args) {
 	// 2번 테스트케이스
 	int[] tc2 = new int[] { -34152, -40000, -50000 };
 
-	System.out.println(p1(tc1, 5000));
-	System.out.println(p1(tc2, 34151));
+	System.out.println(solution(tc1, 5000));
+	System.out.println(solution(tc2, 34151));
 }
 
-private static int p1(int[] ledger, int m) {
+private static int solution(int[] ledger, int m) {
 	int amount = 0;			// 잔고액 변수
 
 	for (int i : ledger) {
