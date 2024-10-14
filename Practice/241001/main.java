@@ -13,7 +13,7 @@ public static void main(String[] args) {
 		}
 	}
 }
-dd
+
 private static int solution(int tickets, int[][] requests) {
 	int sold = 0, grade = 1;
 
