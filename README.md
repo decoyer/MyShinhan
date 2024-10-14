@@ -1,1 +1,3 @@
-# SinhanDS_SW_Academy
+# 신한DS 금융SW 아카데미 4기
+*Fullstack* 개발자 양성과정
+for *2024. 09. 25. ~ 2025. 03. 25.*
