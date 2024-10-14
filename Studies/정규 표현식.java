@@ -9,6 +9,7 @@
 // . : 임의의 문자
 // [0-9a-zA-Z] : \w
 // [0-9] : \d
+// [^]   : 제외
 private static void m1() {
     String num = "010-1234-5678";
     String regExp1 = "([01]{3})-(\\d{3,4})-(\\d{4})";
