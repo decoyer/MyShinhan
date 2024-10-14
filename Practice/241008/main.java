@@ -14,7 +14,7 @@ class Person implements Comparable<Person> {
     }
 }
 
-public class MyClass {
+public class main {
     public static void main(String[] args) {
         // 1번 테스트케이스
         int[] arr1 = { 1000000, 490000, 700000, 290000 };
