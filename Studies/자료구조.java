@@ -19,7 +19,9 @@
 // Queue       : 선입선출 인터페이스
 
 public static void main(String[] args) {
-    // E : 객체 타입, K : 키 타입, V : 값 타입
+    // E : 객체 타입
+    // K : 키 타입
+    // V : 값 타입
     List<E> list1 = new ArrayList<>();
     List<E> list2 = new Vector<>();
     List<E> list3 = new LinkedList<>();
