@@ -15,21 +15,23 @@
 // Hashtable   : 멀티 스레드 지원 HashMap
 // TreeMap     : 객체를 저장할 때 키를 기준으로 정렬
 
-private static void f() {
-    List<Integer> l1 = new ArrayList<>();
-    List<Integer> l2 = new Vector<>();
-    List<Integer> l3 = new LinkedList<>();
+// Stack       : 후입선출 클래스
+// Queue       : 선입선출 인터페이스
 
-    // add() get() contains() size() isEmpty()
+public static void main(String[] args) {
+    // E : 객체 타입, K : 키 타입, V : 값 타입
+    List<E> list1 = new ArrayList<>();
+    List<E> list2 = new Vector<>();
+    List<E> list3 = new LinkedList<>();
   
-    Set<Integer> s1 = new HashSet<>();
-    Set<Integer> s2 = new TreeSet<>();
-
-    // add() contains() size() isEmpty()
+    Set<E> set1 = new HashSet<>();
+    TreeSet<E> set2 = new TreeSet<>();
   
-    Map<Integer, String> m1 = new HashMap<>();
-    Map<Integer, String> m2 = new Hashtable<>();
-    Map<Integer, String> m3 = new TreeMap<>();
+    Map<K, V> map1 = new HashMap<>();
+    Map<K, V> map2 = new Hashtable<>();
+    TreeMap<K, V> map3 = new TreeMap<>();
 
-    // put() get() size() isEmpty()
+    Stack<E> stack = new Stack<>();
+
+    Queue<E> queue = new LinkedList<>();
 }
