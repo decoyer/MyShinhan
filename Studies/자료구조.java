@@ -37,6 +37,5 @@ public static void main(String[] args) {
     TreeMap<K, V> map3 = new TreeMap<>();
 
     Stack<E> stack = new Stack<>();
-
     Queue<E> queue = new LinkedList<>();
 }
