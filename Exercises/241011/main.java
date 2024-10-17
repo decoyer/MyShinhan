@@ -4,11 +4,12 @@ class Account {
         int index = 0;
 
         for (String s : accounts) {
-            // 전체 규칙 확인
+            // 규칙 유효성 확인
             if (!isValid(s))
                 continue;
             // 정상 계좌번호, 계좌패턴 저장
             map.put(getBank(s), map.getOrDefault(getBank(s), 0) + 1);
+            System.out.println(s);
         }
 
         int[] result = new int[map.size()];
@@ -43,48 +44,25 @@ class Account {
         return sb.toString();
     }
 
-    // 1번 규칙(숫자와 특수문자로만 구성) 포함하여 전체 규칙 확인
+    // 규칙 유효성 확인
     private boolean isValid(String str) {
-        if (str.matches("[0-9-]+") && rule2(str) >= 11 && rule2(str) <= 14
-                && rule3(str) >= 0 && rule3(str) <= 3 && rule4(str))
-            return true;
-
-        return false;
-    }
-
-    // 2번 규칙(숫자 11개 이상 14개 이하) 확인
-    private int rule2(String str) {
-        int cnt = 0;
-
-        for (int i = 0; i < str.length(); i++) {
-            if (48 <= str.charAt(i) && str.charAt(i) <= 57)
-                cnt++;
-        }
-
-        return cnt;
-    }
-    
-    // 3번 규칙(- 0개 이상 3개 이하) 확인
-    private int rule3(String str) {
-        int cnt = 0;
-
-        for (int i = 0; i < str.length(); i++) {
-            if ((str.charAt(i)) == '-')
-                cnt++;
-        }
-
-        return cnt;
-    }
-
-    // 4번 규칙(- 연속 X / 처음이나 마지막 X) 확인
-    private boolean rule4(String str) {
-        if (str.charAt(0) == '-' || str.charAt(str.length() - 1) == '-')
+        // 1번 규칙(숫자와 -로만 구성) 확인
+        if (!str.matches("[0-9-]+"))
             return false;
 
-        for (int i = 1; i < str.length() - 1; i++) {
-            if ((str.charAt(i)) == '-' && (str.charAt(i + 1)) == '-')
-                return false;
-        }
+        // 2번 규칙(숫자 11개 이상 14개 이하) 확인
+        long cnt2 = str.chars().filter(c -> Character.isDigit(c)).count();
+        if (cnt2 < 11 || cnt2 > 14)
+            return false;
+
+        // 3번 규칙(- 0개 이상 3개 이하) 확인
+        long cnt3 = str.chars().filter(c -> c == '-').count();
+        if (cnt3 < 0 || cnt3 > 3)
+            return false;
+
+        // 4번 규칙(- 연속 X / 처음이나 마지막 X) 확인
+        if (str.contains("--") || str.startsWith("-") || str.endsWith("-"))
+            return false;
 
         return true;
     }
