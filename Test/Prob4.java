@@ -1,11 +1,4 @@
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
-import java.util.HashSet;
-
+// 파일 작업을 위한 객체 직렬화
 class Product implements Serializable {
 	private String model_name;
 	private int price;
@@ -60,6 +53,7 @@ public class Prob4 {
 		readFile();
 	}
 
+	// price 값 이상의 상품만 저장
 	private static HashSet<Product> makeHashSet(Product[] prodList, int price) {
 		HashSet<Product> set = new HashSet<>();
 
@@ -70,6 +64,7 @@ public class Prob4 {
 		return set;
 	}
 
+	// 파일 쓰기
 	private static void makeFile(HashSet resultList) throws IOException {
 		try (FileOutputStream fos = new FileOutputStream("data.txt");
 				ObjectOutputStream oos = new ObjectOutputStream(fos)) {
@@ -82,6 +77,7 @@ public class Prob4 {
 		}
 	}
 
+	// 파일 읽기
 	private static void readFile() throws IOException, ClassNotFoundException {
 		try (FileInputStream fis = new FileInputStream("data.txt");
 				ObjectInputStream ois = new ObjectInputStream(fis)) {
