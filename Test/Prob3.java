@@ -1,3 +1,4 @@
+// 클래스 생성하여 각종 연산 수행
 class PhoneCharge {
 	private String user;
 	private int call;
