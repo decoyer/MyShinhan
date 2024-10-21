@@ -64,3 +64,13 @@ WHERE FIRST_NAME LIKE '%tt%';
 SELECT *
 FROM EMPLOYEES
 WHERE FIRST_NAME LIKE '__a%';
+
+-- 2000년대에 입사해서 30, 50, 80 번 부서에 속해있으면서, 급여를 5000 이상 17000 이하를 받는 직원을 출력
+-- 단, 커미션을 받지 않는 직원들은 검색 대상에서 제외시키며 먼저 입사한 직원이 먼저 출력되어야 하고 입사일이 같은 경우 급여가 많은 직원이 먼저 출력
+SELECT *
+FROM EMPLOYEES
+WHERE TO_CHAR(HIRE_DATE, 'rr-mm-dd') BETWEEN '00-01-01' AND '09-12-31'
+AND DEPARTMENT_ID IN (30, 50, 80)
+AND SALARY BETWEEN 5000 AND 17000
+AND COMMISSION_PCT IS NOT NULL
+ORDER BY HIRE_DATE, SALARY DESC;
