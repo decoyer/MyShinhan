@@ -1,0 +1,25 @@
+-- 테이블 생성
+CREATE TABLE CARTS(
+    ID INT,
+	USER_ID INT,
+	PAYED_AT DATE,
+    PRODUCT_COUNT INT
+);
+
+-- 데이터 입력
+INSERT INTO CARTS VALUES (636, 3, to_date('2001-02-03', 'yyyy-mm-dd'), 5);
+INSERT INTO CARTS VALUES (287, 4, to_date('2000-05-27', 'yyyy-mm-dd'), 13);
+INSERT INTO CARTS VALUES (448, 4, to_date('2000-08-17', 'yyyy-mm-dd'), 17);
+INSERT INTO CARTS VALUES (578, 4, to_date('2001-01-29', 'yyyy-mm-dd'), 9);
+INSERT INTO CARTS VALUES (734, 11, to_date('2001-04-10', 'yyyy-mm-dd'), 10);
+INSERT INTO CARTS VALUES (195, 11, to_date('2000-04-12', 'yyyy-mm-dd'), 11);
+
+-- 저장
+COMMIT;
+
+-- 데이터 조회
+SELECT USER_ID, COUNT(*) PAYED_COUNT
+FROM CARTS
+WHERE PRODUCT_COUNT >= 10
+GROUP BY USER_ID
+HAVING COUNT(*) >= 2;
