@@ -1,9 +1,9 @@
 -- 테이블 생성
 CREATE TABLE CARTS(
-    ID INT,
+	ID INT,
 	USER_ID INT,
 	PAYED_AT DATE,
-    PRODUCT_COUNT INT
+	PRODUCT_COUNT INT
 );
 
 -- 데이터 입력
