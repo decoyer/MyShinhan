@@ -4,6 +4,8 @@ Restaurant Picker with *Java*
 using *Oracle Database*
 
 ## Details
+![image](https://github.com/user-attachments/assets/b01a5a8d-cddb-493c-bbc9-1c163315de85)
+
 - Oracle DB 문법으로 **데이터 베이스** 생성
 - **JAVA**와 **데이터 베이스**를 연결하여 JDBC 구축
 - **MVC 패턴**으로 구현
