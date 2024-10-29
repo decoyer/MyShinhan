@@ -1,5 +1,5 @@
 # 식당 추천 프로그램
-Restaurant Recommendator with *Java*
+Restaurant Picker with *Java*
 
 using *Oracle Database*
 
